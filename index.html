@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(180deg,#2c0a4d,#6b2fa0);
+
+}
+
+/* contenedor */
+
+#contenedor{
+
+width:100%;
+max-width:420px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+/* SVG responsive */
+
+svg{
+
+width:90vw;
+max-width:420px;
+height:auto;
+
+}
+
+/* tallo creciendo */
+
+#tallo{
+
+stroke-dasharray:300;
+stroke-dashoffset:300;
+animation:crecer 2s ease forwards;
+
+}
+
+@keyframes crecer{
+
+to{
+stroke-dashoffset:0;
+}
+
+}
+
+/* hojas */
+
+.hoja{
+
+opacity:0;
+transform:scale(0);
+animation:hoja .5s forwards;
+
+}
+
+.hoja1{animation-delay:1.5s;}
+.hoja2{animation-delay:1.8s;}
+
+@keyframes hoja{
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+/* pétalos */
+
+.petalo{
+
+opacity:0;
+transform:scale(0);
+transform-origin:0 80px;
+animation:petalo .5s forwards;
+
+}
+
+@keyframes petalo{
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+/* centro */
+
+#centro{
+
+opacity:0;
+transform:scale(0);
+animation:centro .5s forwards 3s;
+
+}
+
+@keyframes centro{
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+/* movimiento flor */
+
+#flor{
+
+transform-origin:340px 400px;
+animation:viento 4s ease-in-out infinite;
+
+}
+
+@keyframes viento{
+
+0%{transform:rotate(-2deg)}
+50%{transform:rotate(2deg)}
+100%{transform:rotate(-2deg)}
+
+}
+
+/* texto */
+
+.texto1{
+
+margin-top:10px;
+color:#ffe0f0;
+font-style:italic;
+font-size:18px;
+text-align:center;
+
+}
+
+.texto2{
+
+color:#FFE066;
+font-weight:bold;
+font-size:22px;
+text-align:center;
+
+}
+
+button{
+
+margin-top:20px;
+padding:10px 26px;
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.4);
+
+background:rgba(255,255,255,.1);
+
+color:white;
+
+font-size:16px;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="contenedor">
+
+<svg viewBox="0 0 680 660">
+
+<g id="flor">
+
+<!-- tallo -->
+
+<path id="tallo"
+d="M340 580 C340 520 340 450 340 330"
+stroke="#48a81f"
+stroke-width="10"
+fill="none"
+stroke-linecap="round"/>
+
+<!-- hojas -->
+
+<ellipse class="hoja hoja1"
+cx="300"
+cy="460"
+rx="60"
+ry="20"
+fill="#5aaa22"
+transform="rotate(-30 300 460)"/>
+
+<ellipse class="hoja hoja2"
+cx="380"
+cy="420"
+rx="60"
+ry="20"
+fill="#5aaa22"
+transform="rotate(30 380 420)"/>
+
+<!-- pétalos -->
+
+<g transform="translate(340 240)">
+
+<g transform="rotate(0)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFE066"/>
+</g>
+
+<g transform="rotate(30)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFD84D"/>
+</g>
+
+<g transform="rotate(60)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFE066"/>
+</g>
+
+<g transform="rotate(90)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFD84D"/>
+</g>
+
+<g transform="rotate(120)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFE066"/>
+</g>
+
+<g transform="rotate(150)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFD84D"/>
+</g>
+
+<g transform="rotate(180)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFE066"/>
+</g>
+
+<g transform="rotate(210)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFD84D"/>
+</g>
+
+<g transform="rotate(240)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFE066"/>
+</g>
+
+<g transform="rotate(270)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFD84D"/>
+</g>
+
+<g transform="rotate(300)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFE066"/>
+</g>
+
+<g transform="rotate(330)">
+<ellipse class="petalo" cx="0" cy="-80" rx="28" ry="80" fill="#FFD84D"/>
+</g>
+
+</g>
+
+<!-- centro -->
+
+<g id="centro">
+<circle cx="340" cy="240" r="38" fill="#c45c00"/>
+<circle cx="340" cy="240" r="22" fill="#8f2f00"/>
+</g>
+
+</g>
+
+</svg>
+
+<div class="texto1">eres una pendeja...</div>
+<div class="texto2">¡pero te quiero! ♡</div>
+
+<button onclick="location.reload()">volver a ver ↺</button>
+
+</div>
+
+</body>
+</html>
